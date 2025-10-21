@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Login (Figma 449:1406)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- ============================================================================
+  REQUIREMENT TRACEABILITY
+  ============================================================================
+  Requirement ID: REQ-LOGIN-449-1406
+  User Story: As a user, I need a pixel-accurate login screen to sign into the app.
+  Acceptance Criteria:
+  - Pixel-accurate layout per screen_449:1406.json (1440x1024)
+  - Exact images from /assets/figmaimages used with precise dimensions
+  - Accessible form with labels, focus states, and validation hooks
+  - Email format validation and required password
+  - Audit trail console logging on submit (no network)
+  GxP Impact: YES - UI input capture with validation and audit trail hooks
+  Risk Level: LOW
+  Validation Protocol: VP-UI-LOGIN-001
+  ============================================================================
+  RELEASE GATE CHECKLIST
+  - [x] All inputs validated (frontend)
+  - [x] Audit trail logging to console (placeholder)
+  - [x] Error handling placeholders present
+  - [x] Accessibility labels and focus styles included
+  - [x] Exact asset paths from Figma JSON
+  ============================================================================ -->
+
+  <!-- Font (following JSON typography approximations) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles for this screen -->
+  <link rel="stylesheet" href="./login-449-1406.css">
+</head>
+<body>
+  <main class="login main" role="main" aria-labelledby="login-heading">
+    <!-- Background texture from Figma JSON: /assets/figmaimages/figma_image_451_862.png -->
+    <section class="login__card auth-card" data-figma-frame="449:1406">
+      <div class="login__grid">
+        <!-- Left column: Sign-in form -->
+        <div class="login__form auth-form">
+          <h1 id="login-heading" class="login__title">Sign In</h1>
+
+          <form id="login-form" novalidate aria-describedby="form-errors">
+            <!-- Username field (Figma: "Enter Username", width 559, height 60) -->
+            <div class="login__field field field--username">
+              <label class="field__label sr-only" for="username">Username</label>
+              <span class="field__icon icon" aria-hidden="true">
+                <img src="/assets/figmaimages/figma_image_449_1424.svg" width="20" height="20" alt="">
+              </span>
+              <input
+                id="username"
+                name="username"
+                type="email"
+                class="field__input"
+                placeholder="Enter Username"
+                inputmode="email"
+                autocomplete="username"
+                required
+                aria-required="true"
+                aria-invalid="false"
+                aria-describedby="username-error"
+              >
+              <span id="username-error" class="field__error" role="alert" aria-live="polite"></span>
+            </div>
+
+            <!-- Password field (Figma: "Enter Password", width 559, height 60) -->
+            <div class="login__field field field--password">
+              <label class="field__label sr-only" for="password">Password</label>
+              <span class="field__icon icon" aria-hidden="true">
+                <img src="/assets/figmaimages/figma_image_449_1419.svg" width="20" height="26" alt="">
+              </span>
+              <input
+                id="password"
+                name="password"
+                type="password"
+                class="field__input"
+                placeholder="Enter Password"
+                autocomplete="current-password"
+                required
+                aria-required="true"
+                aria-invalid="false"
+                aria-describedby="password-error"
+              >
+              <span id="password-error" class="field__error" role="alert" aria-live="polite"></span>
+            </div>
+
+            <!-- Remember me (checkbox 18x18, label 122x20) -->
+            <div class="login__remember remember">
+              <input id="remember" name="remember" type="checkbox" class="remember__checkbox" aria-describedby="remember-help">
+              <label class="remember__label" for="remember">Remember Me</label>
+              <span id="remember-help" class="sr-only">Your session may persist on this device.</span>
+            </div>
+
+            <!-- Primary button (width 129, height 60) -->
+            <div class="login__actions">
+              <button id="login-submit" class="btn btn--primary btn-primary" type="submit">Login</button>
+            </div>
+
+            <!-- Social login row -->
+            <div class="login__social social" aria-label="Alternative sign-in options">
+              <span class="social__label label">Or, Login with </span>
+              <div class="social__icons icons" role="group" aria-label="Social providers">
+                <!-- Google icon (27.74 square from vector group) -->
+                <button type="button" class="icon-btn" aria-label="Login with Google">
+                  <img src="/assets/figmaimages/figma_image_449_1432.svg" width="28" height="28" alt="">
+                </button>
+                <!-- Facebook icon (25x25) -->
+                <button type="button" class="icon-btn" aria-label="Login with Facebook">
+                  <img src="/assets/figmaimages/figma_image_449_1435.svg" width="25" height="25" alt="">
+                </button>
+              </div>
+            </div>
+
+            <!-- Signup hint -->
+            <p class="login__signup signup">
+              Don’t have an account?
+              <a href="#" class="signup__link" aria-label="Create an account">Create One</a>
+            </p>
+
+            <!-- Form-level error region -->
+            <div id="form-errors" class="login__errors" role="alert" aria-live="polite"></div>
+          </form>
+        </div>
+
+        <!-- Right column: Illustration (613x613) -->
+        <aside class="login__illustration illustration" aria-hidden="true">
+          <img
+            src="/assets/figmaimages/figma_image_449_1409.png"
+            alt=""
+            width="613"
+            height="613"
+          >
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <!-- Behavior for this screen -->
+  <script src="./login-449-1406.js"></script>
+</body>
+</html>
